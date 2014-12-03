@@ -4,5 +4,31 @@
     <string name="app_name">IInetRetrofit</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="tvUsername">Username:</string>
+    <string name="tvPassword">Password:</string>
+    <string name="bLogin">Login</string>
+    <string name="tvRawJsonLogin">RawJSON</string>
+    <string name="tvPasswordData">tvPasswordData</string>
+    <string name="tvUsernameData">tvUsernameData</string>
+    <string name="tvStoken">Service token</string>
+    <string name="cbRememberLogin">Remember Login Details</string>
+    <string name="tvUsageData">Data Passed from mainActivity</string>
+    <string name="loginURL">Login URL</string>
+    <string name="tvName">Name</string>
+    <string name="tvNameValue">Name Value</string>
+    <string name="tvMonthStart">New Month Starts</string>
+    <string name="tvIP">IP Address</string>
+    <string name="tvIPData"></string>
+    <string name="tvOnSince">Connected Since</string>
+    <string name="tvOnSinceData"></string>
+    <string name="tvDaysRemaining">Days Remaining</string>
+    <string name="tvDaysRemainingData"></string>
+    <string name="tvMonthStartData"></string>
+    <string name="tvDaysRemainingLabel">Days Remaining</string>
+    <string name="tvNamePeak">Name:</string>
+    <string name="tvNameUsage">Usage</string>
+    <string name="tvListUsage">List Usage</string>
+    <string name="tvToken">token</string>
+
 
 </resources>

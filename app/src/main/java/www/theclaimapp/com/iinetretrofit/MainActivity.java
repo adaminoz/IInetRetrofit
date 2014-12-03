@@ -4,14 +4,32 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+import www.theclaimapp.com.iinetretrofit.Api.LoginDetails;
+import www.theclaimapp.com.iinetretrofit.Model.Creds;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private TextView tvToken;
+    private TextView stoken;
+    private TextView etUsername;
+    private TextView etPassword;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        tvToken = (TextView) findViewById(R.id.tvToken);
+
     }
 
 
@@ -35,5 +53,31 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onLoginClick(View view) {
+        LoginDetails.
+                getIInetApiClient().
+                getUser(etUsername.getText().toString(), new Callback<Creds>() {
+                    @Override
+                    public void success(Creds credsresult, Response response) {
+                        Toast.makeText(getApplicationContext(), credsresult.getEtUsername() + " Loaded! Status Code:" + response.getStatus(), Toast.LENGTH_LONG).show();
+              //          Toast.makeText(getApplicationContext(), creds.getEtPassword() + " Loaded! Status Code:" + response.getStatus(), Toast.LENGTH_LONG).show();
+
+                        tvToken.setText(credsresult.getToken());
+                //        etPassword.setText(String.valueOf(creds.getEtPassword()));
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+
+
+                });
+
+
+
+
     }
 }

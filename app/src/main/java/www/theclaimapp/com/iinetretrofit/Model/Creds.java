@@ -6,26 +6,14 @@ package www.theclaimapp.com.iinetretrofit.Model;
 public class Creds {
 
     private String token;
-    private String s_token;
-    private String etUsername;
- //   private String etPassword;
+    private String success;
+    private String response;
 
 
-  //  public String getEtPassword() {
-  //      return etPassword;
-  //  }
 
-  //  public void setEtPassword(String etPassword) {
-  //      this.etPassword = etPassword;
-  //  }
+    private String username;
+    private String password;
 
-       public String getEtUsername() {
-       return etUsername;
-   }
-
-       public void setEtUsername(String etUsername) {
-       this.etUsername = etUsername;
-    }
 
     public String getToken() {
         return token;
@@ -35,12 +23,27 @@ public class Creds {
         this.token = token;
     }
 
-    public String getS_token() {
-        return s_token;
+      public String getUsername() {
+        return username;
     }
 
-    public void setS_token(String s_token) {
-        this.s_token = s_token;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(String success) {
+        this.success = success;
+    }
 }

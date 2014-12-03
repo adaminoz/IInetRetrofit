@@ -1,7 +1,7 @@
 package www.theclaimapp.com.iinetretrofit;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +21,7 @@ public class MainActivity extends ActionBarActivity {
     private TextView stoken;
     private TextView etUsername;
     private TextView etPassword;
+    private TextView success;
 
 
     @Override
@@ -28,7 +29,8 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvToken = (TextView) findViewById(R.id.tvToken);
+        success = (TextView) findViewById(R.id.tvToken);
+        etUsername = (TextView) findViewById(R.id.etUsername);
 
     }
 
@@ -58,14 +60,15 @@ public class MainActivity extends ActionBarActivity {
     public void onLoginClick(View view) {
         LoginDetails.
                 getIInetApiClient().
-                getUser(etUsername.getText().toString(), new Callback<Creds>() {
-                    @Override
-                    public void success(Creds credsresult, Response response) {
-                        Toast.makeText(getApplicationContext(), credsresult.getEtUsername() + " Loaded! Status Code:" + response.getStatus(), Toast.LENGTH_LONG).show();
-              //          Toast.makeText(getApplicationContext(), creds.getEtPassword() + " Loaded! Status Code:" + response.getStatus(), Toast.LENGTH_LONG).show();
+                getUserCreds(etUsername.getText().toString(), new Callback<Creds>() {
 
-                        tvToken.setText(credsresult.getToken());
-                //        etPassword.setText(String.valueOf(creds.getEtPassword()));
+               @Override
+                    public void success(Creds credsresult, Response response) {
+                        Toast.makeText(getApplicationContext(), credsresult.getUsername() + " Loaded! Status Code:" + response.getStatus(), Toast.LENGTH_LONG).show();
+                        //          Toast.makeText(getApplicationContext(), creds.getEtPassword() + " Loaded! Status Code:" + response.getStatus(), Toast.LENGTH_LONG).show();
+
+                        success.setText(String.valueOf(credsresult.getSuccess()));
+
                     }
 
                     @Override

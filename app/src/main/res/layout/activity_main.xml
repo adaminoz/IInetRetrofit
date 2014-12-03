@@ -38,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etUsername"
+        android:text="adamps"
         android:layout_alignBottom="@+id/tvUsername"
         android:layout_toRightOf="@+id/tvUsername"
         android:layout_toEndOf="@+id/tvUsername"

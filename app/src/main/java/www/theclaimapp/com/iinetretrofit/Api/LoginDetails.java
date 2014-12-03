@@ -11,7 +11,7 @@ public class LoginDetails {
     public static IinetApi getIInetApiClient() {
         if (sIInetService == null ) {
             RestAdapter restAdapter = new RestAdapter.Builder()
-                    .setEndpoint("https://toolbox.iinet.net.au/cgi-bin/api.cgi?")
+                    .setEndpoint("https://toolbox.iinet.net.au")
                     .setLogLevel(RestAdapter.LogLevel.FULL)
                     .build();
 
